@@ -1,6 +1,7 @@
 import Event from "./Event";
 import React, { useContext } from "react";
 import AppContext from "../contexts/AppContext";
+import events from "../reducers/events";
 
 const Events = () => {
   const { state } = useContext(AppContext)
@@ -17,7 +18,7 @@ const Events = () => {
         </tr>
         </thead>
         <tbody>
-        {state.map((event, index) => (<Event key={index} event={event}/>))}
+        {state.events.map((event, index) => (<Event key={index} event={event}/>))}
         </tbody>
       </table>
     </>
