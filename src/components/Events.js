@@ -1,7 +1,6 @@
 import Event from "./Event";
 import React, { useContext } from "react";
 import AppContext from "../contexts/AppContext";
-import events from "../reducers/events";
 
 const Events = () => {
   const { state } = useContext(AppContext)
