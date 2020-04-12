@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CREATE_EVENT, DELETE_ALL_EVENT } from '../actions'
 
 const EventForm = ({ state, dispatch }) => {
   const [title, setTitle] = useState('')
@@ -7,7 +8,7 @@ const EventForm = ({ state, dispatch }) => {
   const addEvent = (e) => {
     e.preventDefault()
     dispatch({
-      type: 'CREATE_EVENT',
+      type: CREATE_EVENT,
       title,
       body
     })
@@ -19,7 +20,7 @@ const EventForm = ({ state, dispatch }) => {
   const deleteAllEvents = (e) => {
     e.preventDefault()
     if (window.confirm("全て削除してもよろしいでしょうか?")){
-      dispatch({type: 'DELETE_ALL_EVENTS'})
+      dispatch({type: DELETE_ALL_EVENT})
     }
   }
 
@@ -27,7 +28,6 @@ const EventForm = ({ state, dispatch }) => {
 
   return (
     <>
-    <h4>イベント作成フォーム</h4>
     <form>
       <div className="form-group">
         <label htmlFor="forEventTitle">タイトル</label>
